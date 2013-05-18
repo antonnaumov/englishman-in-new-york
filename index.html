@@ -301,7 +301,7 @@ val xml =
  def parseResponse(response: String): Map[String, String] = {
    (for (param &lt;- response.split("&amp;");
 	 trimmed = URLDecoder.decode(param.trim, "UTF-8");
-	 if !trimmed.isEmpty) yield {
+	 if (!trimmed.isEmpty) yield {
 	   (trimmed.split("=", 2).toList: @unchecked) match {
 		 case key :: value :: Nil =&gt; key -&gt; value
 		 case key :: Nil =&gt; key -&gt; null
@@ -380,8 +380,10 @@ val xml =
  			   final String type) {
  	 long sum = 0;
 	 for (final Fee fee : fees) {
-	 	 if (fee != null &amp;&amp; fee.getType().equalsIgnoreCase(type)) {
-		 	 sum += fee.getAmount() == null ? 0L : fee.getAmount()
+	 	 if (fee != null &amp;&amp; fee.getType()
+	 	     .equalsIgnoreCase(type)) {
+		 	 sum += fee.getAmount() == null ? 0L : 
+		 	     fee.getAmount()
 	 	 }
 	  }
 	  return sum;
@@ -422,7 +424,7 @@ val xml =
  public final class FeeExtension {
      private FeeExtension() {}
 		
-	 public static long getFeeAmount(fee: Fee) {>
+	 public static long getFeeAmount(fee: Fee) {
 	     return fee.getAmount() == null ? 0L : fee.getAmount();
      }
  }
