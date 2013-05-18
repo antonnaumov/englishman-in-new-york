@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Englishman in New York - Scala for Java Developer</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+	document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>englishman in new york</h1>
+					<p>Scala for Java Developer =&gt; Personal Experience</p>
+					<div>
+						<img src="images/Java Breeze_LOGO_New.jpg" style="">
+					</div>
+				</section>
+				<section>
+					<h2>Who is this guy?</h2>
+					<div>
+						<br>
+					</div>
+					<div>12+ yeas in Java Development</div>
+					<div>
+						<br>
+					</div>
+					<div>JEEconf <a href="http://jeeconf.com/archive/jeeconf-2011/speakers/">2011</a>, <a href="http://jeeconf.com/archive/jeeconf-2012/speakers/">2012</a> speaker</div>
+					<div>UA Web Challenge <a href="http://i.uwc.org.ua/about-project">I</a>, <a href="http://ii.uwc.org.ua/judges">II</a>, <a href="http://iii.uwc.org.ua/judges">III</a>, <a href="http://uawebchallenge.com">IV</a> judge</div>
+					<div>
+						<a href="http://hotcode.org">HotCode</a> Java Stage Producer</div>
+						<div>
+							<br>
+						</div>
+						<div>
+							<a href="mailto:anton.naumow@gmail.com">anton.naumow@gmail.com</a>
+						</div>
+						<div>
+							<div>Skype: anton.naumow</div>
+						</div>
+						<div>
+							<a href="https://twitter.com/antonnaumov">@antonnaumov</a>
+						</div>
+						<div>
+							<a href="http://ua.linkedin.com/in/antonnaumov/">ua.linkedin.com/in/antonnaumov/</a>
+							<br>
+						</div>
+						<div>
+							<a href="http://corwin.calepin.co">http://corwin.calepin.co</a>
+						</div>
+					</section>
+					<section>
+						<section>
+							<h2>Why Scala?</h2>
+							<div><br/></div>
+							<p class="fragment roll-in" data-fragment-index="0">Buzz word?</p>
+							<p class="fragment roll-in" data-fragment-index="1">Modern technology</p>
+							<p class="fragment roll-in" data-fragment-index="2">Respect</p>
+							<p class="fragment roll-in" data-fragment-index="3">New knowledge and new challenge</p>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>Getting started</h2>
+								<pre><code class="scala">
+ object HelloWorld {
+   def main(args: Array[String]) {
+     println("Hello world!")
+   }
+ }
+								</code></pre> 
+				</section>
+				<section>
+					<h2>Getting Started</h2>
+					<div><pre><code class="scala">
+...
+ def sum(bars: Iterable[Bar]): Long = {
+   bars.filter(_.type == SOME).foldLeft(0L)(_ + _.amount)
+ }
+...
+						</code></pre></div>
+				</section>
+				<section>
+					<h2>Getting started</h2>
+					<div>
+						<br>
+					</div>
+					<div>
+						<img src="images/195.png" style="">
+						<br>
+					</div>
+				</section>
+			</section>
+			<section>
+				<h2>Try once more</h2>
+				<div>
+					<br>
+				</div>
+				<div>
+					<a href="http://www.codecommit.com/blog/scala/scala-for-java-refugees-part-1">Daniel Spiewak "Scala for Java Refugees"</a>
+				</div>
+			</section>
+			<section>
+				<section>
+					<h2>Light side</h2>
+					<div>
+						<br>
+					</div>
+					<div>
+						<img src="images/yoda.jpg" style="">
+						<br>
+					</div>
+				</section>
+				<section>
+					<h2>Option</h2>
+					<div>I think its no NullPointerExceptions anymore</div>
+					<div>
+						<br>
+					</div>
+						<pre><code class="scala">
+...
+ Option(getBar("foo"))
+   def bar(index: java.lang.Integer): Option[Int] = {
+     Option(index) match {
+	   case value: Some =&gt; value
+	   case None =&gt; None 
+	 }
+}
+...
+							</code></pre>
+				</section>
+				<section>
+					<h2>Tupple</h2>
+					<div>Up to 22 arguments. No stupid classes. No arrays.&nbsp;</div>
+					<div>No guessing.</div>
+					<div>
+						<pre><code class="scala">
+...
+ def bar(pattern: String):(Int, String) = (pattern.length, pattern)
+...						</code></pre>
+					</div>
+					<div>
+					</div>
+
+
+
+				</section>
+				<section>
+					<h2>Match</h2>
+					<div>It's something like switch... but much better</div>
+					<pre><code class="scala">
+...
+ (number, string) match {
+   case (1, "test") =&gt; ...
+   case (_, "another test") =&gt; ...
+   case _ =&gt; ...
+ }
+... 				
+					</code></pre>
+				</section>
+				<section>
+					<h2>collections</h2>
+					<div>Some magic happens here</div>
+					<pre><code class="java">
+...
+ final Collection&lt;Integer&gt; coll = Lists.newArrayList(1, 2, 3, 4, 5);
+...
+ for (final int item : coll) {
+      if (item == 5) {
+          return item;
+      }
+ }
+ return -1;
+...
+				</code></pre><pre><code class="scala">
+...
+ val coll = Seq(1, 2, 3, 4, 5)
+...
+ coll.find(_ == 5) match {
+   case Some(item) =&gt; item
+   case None =&gt; ...
+ }
+... 
+				</code></pre>
+		</section>
+		<section>
+			<h2>Exception handling</h2>
+			<div>Something like Java 1.9</div>
+			<pre><code class="scala">
+...
+ try {
+ //some code throws exceptions
+ catch {
+   case e: IllegalAccessException =&gt; ...
+   case e: Exception =&gt; ...
+ }
+... 
+			</code></pre>
+		</section>
+		<section>
+			<h2>Trait</h2>
+			<div>No comments</div>
+			<pre><code class="scala">
+ trait First {
+   def convert(input: String): String
+ }
+		
+ trait Second {
+   def out(input: String) =&gt; System.out.println(bar(input))
+ }
+ 
+ class Third extends First with Second {
+   override def convert(input: String): String =&gt; input.toLowerCase()
+ }
+...
+ val obj = new Third
+ obj.out("HeLlO TrAiTs!")
+				</code></pre>
+		</section>
+		<section>
+			<h2>Multithreading</h2>
+			<div>Simple. More simple. The simplest</div>
+			<div>
+				<pre><code class="scala">
+ Iterable[String] seq = Seq("one", "two", "three")
+ seq.par.map { str =&gt; str.toUpperCase() } 
+				</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>XML</h2>
+				<div>Like a charm</div>
+				<div>
+					<pre><code class="scala"> 
+val xml =
+   <root>
+     <node name="first">Some text</node>
+	 <node name="second">Some other text</node>
+  </root>
+					</code></pre>
+				</div>
+				<div>
+					<pre><code class="scala">
+...
+ val source = XML.load(IOUtils.toInputStream(xml)
+ (source \ "node" \ "@name").text match {
+   case "first" =&gt; "First node found"
+   case _ =&gt; (source \ "node").text
+...
+						</code></pre>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>DARK side</h2>
+					<div>
+						<img src="images/darthwaider.png" style="">
+						<br>
+					</div>
+				</section>
+				<section>
+					<h2>Compilation time</h2>
+					<div>Scala code compiles about 30% longer than Java code</div>
+					<div>
+						<img src="images/compiling.png" style="">
+						<br>
+					</div>
+				</section>
+				<section>
+					<h2>code READABILITY</h2>
+					<div>Somekind like this still mess a point</div>
+					<div>
+						<pre><code class="scala"> 
+ def parseResponse(response: String): Map[String, String] = {
+   (for (param &lt;- response.split("&amp;");
+	 trimmed = URLDecoder.decode(param.trim, "UTF-8");
+	 if !trimmed.isEmpty) yield {
+	   (trimmed.split("=", 2).toList: @unchecked) match {
+		 case key :: value :: Nil =&gt; key -&gt; value
+		 case key :: Nil =&gt; key -&gt; null
+	   }
+	 }).toMap
+						</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>operator overriding, implicit</h2>
+				<div>
+					<br>
+				</div>
+				<div>Not obvious language constructions always MAY produce a mess</div>
+				<div>
+					<br>
+				</div>
+				<div>And always will produce a mess</div>
+			</section>
+			<section>
+				<h2>no backward compatibility</h2>
+				<div>
+					<br>
+				</div>
+				<div>Scala 2.9 code produce an runtime exception running with Scala 2.10</div>
+			</section>
+			<section>
+				<h2>Diamond Problem</h2>
+				<div>
+					<br>
+				</div>
+				<div>Multiple inheritance solution is architecture bomb</div>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>top 3 Scala features</h2>
+				<div>
+					<br>
+				</div>
+				<div>Something not obvious but very useful</div>
+				<div>
+					<br>
+				</div>
+				<div>
+					<img src="images/deeper.png" style="">
+					<br>
+				</div>
+			</section>
+			<section>
+				<h2>Model</h2>
+				<div style="text-align: left; ">
+				</div>
+				<div style="text-align: left; ">
+					<pre><code class="scala">
+ class Fee {
+     public Long getAmount() { return amount; }
+	 public void setAmount(final Long amount) { this.amount = amount; }
+ 
+     public String getType() { return type; }
+     public void setType(final String type) { this.type = type; }
+
+     private Long amount;
+     private String type;
+ }
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>COllection Filtering</h2>
+				<h3>Java</h3>
+				<div>
+					<pre><code style="java">
+...
+ public long sumFeesByType(final Collection&lt;Fee&gt; fees, 
+ 			   final String type) {
+ 	 long sum = 0;
+	 for (final Fee fee : fees) {
+	 	 if (fee != null &amp;&amp; fee.getType().equalsIgnoreCase(type)) {
+		 	 sum += fee.getAmount() == null ? 0L : fee.getAmount()
+	 	 }
+	  }
+	  return sum;
+ }
+...
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>COLLEction Filtering</h2>
+				<h3>Scala</h3>
+				<div>
+					<pre><code class="scala">
+...
+ def sumFeesByType(fees: util.Collection[Fee], feeType: String) fees
+   .filter(_.getType.eqaualsIgnoreCase(feeType)
+     .foldLeft(0L)(_ + _.getAmount)
+...
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>Option as collection</h2>
+				<div>
+					<pre><code class="scala">
+...
+ val amount = fees.find(_.getType.equalsIgnoreCase("PROMO"))
+   .map(_.getAmount).getOrElse(0L)
+...
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>Value Conversion</h2>
+				<h3>Java</h3>
+				<div>
+					<pre><code class="java"> 
+ public final class FeeExtension {
+     private FeeExtension() {}
+		
+	 public static long getFeeAmount(fee: Fee) {>
+	     return fee.getAmount() == null ? 0L : fee.getAmount();
+     }
+ }
+...
+ import FeeExtension.*
+...
+ final long amount = getFeeAmount(fee);
+...
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>Value Conversion</h2>
+				<h3>Scala :: implicit + Object</h3>
+				<div>
+					<pre><code class="scala"> 
+ class FeeExtension(fee: Fee) {
+   def amount: Long = Option(fee.getAmount) match {
+	 case Some(value) =&gt; value
+	 case None =&gt; 0L
+   }
+ }
+
+ object FeeExtension {
+   implicit def extendsFee(fee: Fee) = new FeeExtension(fee)
+  }
+...
+ import FeeExtension._
+...
+ val amount = fee.amount
+...
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h2>value conversion</h2>
+				<h3>scala ::: Package object</h3>
+				<div>
+					<pre><code class="scala"> 
+ package com.github.sample;
+ 
+ package object sample {
+   def amount(fee: Fee) = Option(fee) match {
+	 case Some(value) =&gt; value
+	 case None =&gt; 0L 
+   }
+...
+ package com.github.sample;
+...
+ val amount = fee.amount
+...
+					</code></pre>
+				</div>
+			</section>
+		</section>
+		<section>
+			<h2>resume</h2>
+			<div>
+				<br>
+			</div>
+			<div>Scala or Not Scala?</div>
+			<div>
+				<br>
+			</div>
+			<div>
+				<img src="images/154.jpg" style="">
+				<br>
+			</div>
+		</section>
+		<section>
+			<h2>Thank you!</h2>
+			<div>
+				<img src="images/425.jpg" style="">
+				<br>
+			</div>
+		</section>
+	</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					]
+				});
+
+</script>
+
+</body>
+</html>
